@@ -66,6 +66,39 @@
     document.querySelectorAll('h1, h2, .g3 > article, .g4 > div, .track, .tlwrap, .tl').forEach(function (el) {
       if (!el.closest('.hero') || el.tagName === 'H1') io.observe(el);
     });
+    // Quote: words appear one by one, then the red words get an underline
+    var qt = document.querySelector('section[aria-label="Quote"] blockquote');
+    if (qt) {
+      var walker = document.createTreeWalker(qt, NodeFilter.SHOW_TEXT, null);
+      var nodes = [], n;
+      while ((n = walker.nextNode())) nodes.push(n);
+      var count = 0;
+      nodes.forEach(function (tn) {
+        var frag = document.createDocumentFragment();
+        tn.nodeValue.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          var w = document.createElement('span');
+          w.className = 'w';
+          w.style.transitionDelay = (count * 0.06).toFixed(2) + 's';
+          w.textContent = part;
+          frag.appendChild(w);
+          count++;
+        });
+        tn.parentNode.replaceChild(frag, tn);
+      });
+      qt.querySelectorAll('span[style*="FF0000"]').forEach(function (h) {
+        h.classList.add('hl');
+        h.style.transitionDelay = (count * 0.06 + 0.2).toFixed(2) + 's';
+      });
+      qt.classList.add('qt');
+      var qio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { qt.classList.add('in'); qio.disconnect(); }
+        });
+      }, { threshold: 0.4 });
+      qio.observe(qt);
+    }
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         document.querySelectorAll('.hero .g4 > div').forEach(function (el) { el.classList.add('in'); });

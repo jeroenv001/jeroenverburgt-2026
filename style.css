@@ -4,7 +4,7 @@ Theme URI: https://jeroenverburgt.be
 Author: Jeroen Verburgt
 Author URI: https://jeroenverburgt.be
 Description: One-page thema voor jeroenverburgt.be, Content Marketeer & Video.
-Version: 1.11.2
+Version: 1.11.3
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -43,6 +43,7 @@ a{color:inherit}
 .tlwrap{position:relative}.tlwrap::before{content:"";position:absolute;left:8px;right:0;top:9px;height:2px;background:linear-gradient(90deg,#FF0000,#C9D3CD 30%,#C9D3CD);transform-origin:left}.tlh{position:relative;padding:32px 0 0 30px;margin-bottom:10px !important;line-height:22px}.tlh::before{content:"";position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:#EEF2EF;border:3px solid #212E28;box-sizing:border-box}.tlh-now::before{background:#FF0000;border-color:#FF0000;box-shadow:0 0 0 6px rgba(255,0,0,.15)}
 .tl{position:relative;padding-left:30px}.tl::before{content:"";position:absolute;left:8px;top:-55px;bottom:28px;width:2px;background:#C9D3CD;transform-origin:top}.tl-now::before{background:linear-gradient(#FF0000,#C9D3CD 60%)}.tl>div{position:relative}.tl>div::before{content:"";position:absolute;left:-27px;top:25px;width:12px;height:12px;border-radius:50%;background:#EEF2EF;border:2px solid #212E28;box-sizing:border-box;transition:transform .35s cubic-bezier(.2,.8,.2,1)}.tl-now>div::before{border-color:#FF0000}
 .js-rv .tlwrap::before{transform:scaleX(0);transition:transform 1s cubic-bezier(.6,0,.2,1)}.js-rv .tlwrap.in::before{transform:scaleX(1)}.js-rv .tl::before{transform:scaleY(0);transition:transform 1.2s cubic-bezier(.6,0,.2,1) .5s}.js-rv .tl.in::before{transform:scaleY(1)}.js-rv .tl>div::before{transform:scale(0)}.js-rv .tl.in>div::before{transform:scale(1)}.js-rv .tl.in>div:nth-child(1)::before{transition-delay:.6s}.js-rv .tl.in>div:nth-child(2)::before{transition-delay:.85s}.js-rv .tl.in>div:nth-child(3)::before{transition-delay:1.1s}.js-rv .tl.in>div:nth-child(4)::before{transition-delay:1.35s}.js-rv .tl.in>div:nth-child(5)::before{transition-delay:1.6s}
+.js-rv .qt .w{display:inline-block;opacity:0;transform:translateY(.45em);filter:blur(6px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1),filter .6s ease}.js-rv .qt.in .w{opacity:1;transform:none;filter:none}.js-rv .qt .hl{background:linear-gradient(#FF0000,#FF0000) no-repeat 0 100%/0 4px;padding-bottom:.04em;transition:background-size .8s cubic-bezier(.6,0,.2,1)}.js-rv .qt.in .hl{background-size:100% 4px}
 @media (min-width:901px){.hero h1{white-space:nowrap}}
 @media (max-width:900px){.tlwrap::before{display:none}}
 .btn .arr{transition:transform .2s ease}.btn:hover .arr{transform:translateX(3px)}
